@@ -1,5 +1,39 @@
 $(function(){
 
+  //オブジェクトをhtmlに変換する
+	//返り値：html
+  function createDom(items) {
+    let html_template = '';
+    items.forEach(function(item, index){
+      html_template += `<li class="item">
+            <a href="#">
+              <div class="item-cap"><img src="./img/item/${item['id']}.png"
+              <div class="item-info">
+                <h3 class="item-name">${item['name']}</h3>
+                <h3 class="item-text">${item['text']}</h3>
+                <div class="item-price">¥${item['price']}</div>
+              </div>
+            </a>
+          </li>`
+    });
+    return html_template;
+  }
+
+  function getItemList(key){
+    const items = item_data.filter(function(item, index) {
+      switch(key){
+        case 'new':
+        return item['new']
+        break;
+      }
+    });
+    return items;
+  }
+
+  let news = getItemList('new');
+  let new_lis = createDom(news);
+  $('[data-item-list="new"]').append(new_lis);
+
   //TOPのスライダー
   $('.top-slider').slick({
     autoplay:true,

@@ -412,7 +412,7 @@ const item_data = [
 		'price':1700,
 		'text':'ストライプ生地のお洒落なパーカーです。首回りに絞りがついている便利なアイテムです',
 		'brand':'FFF',
-		'new':true,
+		'new':false,
 	},
 	{
 		'id':47,
