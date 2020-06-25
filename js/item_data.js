@@ -182,7 +182,7 @@ const item_data = [
 	{
 		'id':21,
 		'name':'シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':4200,
 		'text':'清楚で綺麗なホワイトシャツ。レイヨン生地の軽い素材です',
 		'brand':'FFF',
@@ -191,7 +191,7 @@ const item_data = [
 	{
 		'id':22,
 		'name':'ロングTシャツ',
-		'category':'woman',
+		'category':'women',
 		'price':2680,
 		'text':'一枚でお洒落に着こなせるブラックロングTシャツ',
 		'brand':'FFF',
@@ -200,7 +200,7 @@ const item_data = [
 	{
 		'id':23,
 		'name':'ジャケット',
-		'category':'woman',
+		'category':'women',
 		'price':25200,
 		'text':'少し派手なピンクジャケット。タイトに着こなせます',
 		'brand':'CCC',
@@ -209,7 +209,7 @@ const item_data = [
 	{
 		'id':24,
 		'name':'ハーフシャツ',
-		'category':'woman',
+		'category':'women',
 		'price':5900,
 		'text':'夏感溢れる綺麗な花柄のハーフシャツです',
 		'brand':'BBB',
@@ -218,7 +218,7 @@ const item_data = [
 	{
 		'id':25,
 		'name':'Tシャツ',
-		'category':'woman',
+		'category':'women',
 		'price':1200,
 		'text':'タイトなブラックのTシャツ。フロントタックインでかっこいいトレンドアイテムです',
 		'brand':'CCC',
@@ -227,7 +227,7 @@ const item_data = [
 	{
 		'id':26,
 		'name':'トレーナー',
-		'category':'woman',
+		'category':'women',
 		'price':100,
 		'text':'チャックつ付きセータートレーナーです。伸縮性もあり暖かいアイテムです',
 		'brand':'GGG',
@@ -236,7 +236,7 @@ const item_data = [
 	{
 		'id':27,
 		'name':'ドット柄シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':2600,
 		'text':'ドット柄の丈の短いゆったり着れるシャツです',
 		'brand':'AAA',
@@ -245,7 +245,7 @@ const item_data = [
 	{
 		'id':28,
 		'name':'シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':7600,
 		'text':'タイトなホワイトのワイシャツ。スタイリッシュなアイテムです',
 		'brand':'BBB',
@@ -254,7 +254,7 @@ const item_data = [
 	{
 		'id':29,
 		'name':'シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':2300,
 		'text':'8分袖のかっこいいタイトなレッドシャツです',
 		'brand':'CCC',
@@ -263,7 +263,7 @@ const item_data = [
 	{
 		'id':30,
 		'name':'トレーナー',
-		'category':'woman',
+		'category':'women',
 		'price':11200,
 		'text':'ゆったり着れるモスブルーのトレーナーです',
 		'brand':'EEE',
@@ -272,7 +272,7 @@ const item_data = [
 	{
 		'id':31,
 		'name':'シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':5400,
 		'text':'少しセクシィなワインレッドのシャツ',
 		'brand':'GGG',
@@ -281,7 +281,7 @@ const item_data = [
 	{
 		'id':32,
 		'name':'デニムコート',
-		'category':'woman',
+		'category':'women',
 		'price':3200,
 		'text':'冬季でお洒落に着こなせるデニムコート。絞りつきでスマートなアイテムです',
 		'brand':'FFF',
@@ -290,7 +290,7 @@ const item_data = [
 	{
 		'id':33,
 		'name':'レザージャケット',
-		'category':'woman',
+		'category':'women',
 		'price':4800,
 		'text':'バイク乗りの間で人気なロッキンレジャージャケット',
 		'brand':'FFF',
@@ -299,7 +299,7 @@ const item_data = [
 	{
 		'id':34,
 		'name':'ワンピース',
-		'category':'woman',
+		'category':'women',
 		'price':1000,
 		'text':'可愛い花柄の赤いワンピース！胸元もひらいていて、夏季などでも爽快感のあるアイテムです',
 		'brand':'CCC',
@@ -308,7 +308,7 @@ const item_data = [
 	{
 		'id':35,
 		'name':'パーカー',
-		'category':'woman',
+		'category':'women',
 		'price':5500,
 		'text':'タイトに着こなせるオレンジカラーのお洒落パーカー',
 		'brand':'AAA',
@@ -317,7 +317,7 @@ const item_data = [
 	{
 		'id':36,
 		'name':'ドレスワンピース',
-		'category':'woman',
+		'category':'women',
 		'price':5400,
 		'text':'インナーでも着れるお洒落な花柄ドレスワンピース！各色24種類ご用意しております',
 		'brand':'CCC',
@@ -326,7 +326,7 @@ const item_data = [
 	{
 		'id':37,
 		'name':'ウィンドブレーカー',
-		'category':'woman',
+		'category':'women',
 		'price':3200,
 		'text':'ランニングにもバッチしなウィンドブレーカーです。フリーサイズアイテムです',
 		'brand':'DDD',
@@ -335,7 +335,7 @@ const item_data = [
 	{
 		'id':38,
 		'name':'ガウチョパンツ',
-		'category':'woman',
+		'category':'women',
 		'price':6700,
 		'text':'ゆったりめな線太ボーダーのガウチョパンツ！上は何着ても抜群に似合うアイテムです',
 		'brand':'EEE',
@@ -344,7 +344,7 @@ const item_data = [
 	{
 		'id':39,
 		'name':'タイトスカート',
-		'category':'woman',
+		'category':'women',
 		'price':7600,
 		'text':'清楚なタイトスカート。カラーは赤、青、白、黒の4種類あります',
 		'brand':'CCC',
@@ -353,7 +353,7 @@ const item_data = [
 	{
 		'id':40,
 		'name':'シャツ',
-		'category':'woman',
+		'category':'women',
 		'price':2900,
 		'text':'夏カラーの淡いカラーレッドのシャツでトレンドアイテムです',
 		'brand':'HHH',

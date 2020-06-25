@@ -1,4 +1,6 @@
 $(function(){
+  const page_type = $('.contents').attr('id');
+  const categorys = ['men', 'women', 'kids'];
 
   //オブジェクトをhtmlに変換する
 	//返り値：html
@@ -19,20 +21,35 @@ $(function(){
     return html_template;
   }
 
-  function getItemList(key){
-    const items = item_data.filter(function(item, index) {
-      switch(key){
-        case 'new':
-        return item['new']
-        break;
-      }
+  function getItemList(key, value = null){
+		const items = item_data.filter(function(item, index) {
+			switch(key){
+				case 'category':
+					return item[key] == value
+					break;
+				case 'new':
+					return item['new']
+					break;
+			}
     });
     return items;
-  }
+	}
 
-  let news = getItemList('new');
-  let new_lis = createDom(news);
-  $('[data-item-list="new"]').append(new_lis);
+  function pickUpShuffle(item_data) {
+		let items = [];
+		let rand_check = [];
+		for( let i = 0; i < 6; i++ ){
+			let j = Math.floor(Math.random() * item_data.length);
+			if( rand_check.indexOf(j) !== -1 ){
+				i--;
+				continue;
+			}else{
+				rand_check.push(j);
+				items.push(item_data[j]);
+			}
+		}
+		return items;
+	}
 
   //TOPのスライダー
   $('.top-slider').slick({
@@ -89,6 +106,15 @@ $(function(){
 		$(this).next().slideToggle();
 	});
   
+  if( page_type == 'page-index' ){
+		let item_list_new = getItemList('new');
+		$('[data-item-list="new"]').append(createDom(item_list_new));
+		categorys.forEach(function(category){
+			let item_list_category = getItemList('category', category);
+			item_list_category = createDom(item_list_category);
+			$(`[data-item-list="${category}"]`).append(item_list_category);
+		});
+	}
   
 });
 
