@@ -69,6 +69,12 @@ a img:hover{
   width: 960px;
   margin: 0 auto;
 }
+.item-list li:nth-child(n + 11){
+  display: none;
+}
+.sidebar-list li:nth-child(n + 4){
+  display: none;
+}
 .slide-btn{
   position: absolute;
   top: 40%;
@@ -357,6 +363,24 @@ a img:hover{
 .footer-link li{
   display: inline-block;
   margin: 0 10px;
+}
+
+/*サークルバナーここから*/
+.circle-banner{
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  width: 150px;
+  z-index: 10;
+  transition: all 0.5s;
+  transform: translateX(100%) rotate(90deg);
+}
+.circle-banner img{
+  width: 100%;
+}
+.circle-banner.is-over{
+  right: 10px;
+  transform: translateX(0) rotate(0);
 }
 
 @media screen and (max-width: 768px){

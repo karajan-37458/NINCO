@@ -1,6 +1,24 @@
 $(function(){
-  const page_type = $('.contents').attr('id');
+	const page_type = $('.contents').attr('id');
+	const param_key = location.search.substring(1).split('=')[0];
+	const param_value = location.search.substring(1).split('=')[1];
   const categorys = ['men', 'women', 'kids'];
+
+	let more_count = {
+		'brand':3,
+		'items':10
+	}
+
+	function moreControl(el, num) {
+		const more_type = $(el).attr('data-more-btn');
+		const target_list = $(`[data-more-list="${more_type}"]`);
+		const max_count = target_list.find('li').length;
+		more_count[more_type] += num;
+		target_list.find(`li:lt(${more_count[more_type]})`).fadeIn();
+		if( more_count[more_type] >= max_count ){
+			$(el).hide();
+		}
+	}
 
   //オブジェクトをhtmlに変換する
 	//返り値：html
@@ -9,7 +27,7 @@ $(function(){
     items.forEach(function(item, index){
       html_template += `<li class="item">
             <a href="#">
-              <div class="item-cap"><img src="./img/item/${item['id']}.png"
+              <div class="item-cap"><img src="./img/item/${item['id']}.png"></div>
               <div class="item-info">
                 <h3 class="item-name">${item['name']}</h3>
                 <h3 class="item-text">${item['text']}</h3>
@@ -19,13 +37,26 @@ $(function(){
           </li>`
     });
     return html_template;
-  }
+	}
+	
+	function searchWordShow() {
+		let result_text;
+		if( param_key == 'price' ){
+			result_text = `〜${param_value}円`;
+			$(`.price-select option[value="${param_value}"]`).prop('selected', true);
+		}else{
+			result_text = param_value;
+		}
+		$('.result-text').text(decodeURI(result_text));
+	}
 
   function getItemList(key, value = null){
+		const search_value = value ? value : param_value;
 		const items = item_data.filter(function(item, index) {
 			switch(key){
+				case 'brand':
 				case 'category':
-					return item[key] == value
+					return item[key] == search_value
 					break;
 				case 'new':
 					return item['new']
@@ -113,6 +144,28 @@ $(function(){
 			let item_list_category = getItemList('category', category);
 			item_list_category = createDom(item_list_category);
 			$(`[data-item-list="${category}"]`).append(item_list_category);
+		});
+	}
+
+	let item_list_pickup = createDom(pickUpShuffle(item_data));
+	$('[data-item-list="pickup"]').append(item_list_pickup);
+
+	$('[data-more-btn="brand"]').on('click',function(){
+    moreControl($(this), 3);
+  });
+  $('[data-more-btn="items"]').on('click',function(){
+    moreControl($(this), 10);
+	});
+
+	if( page_type == 'page-detail' ){
+		$('[data-zoom-image]').elevateZoom();
+	}
+	
+	if( page_type == 'page-list' ){
+		const item_list = createDom(getItemList(param_key));
+		$('.sort-list').append(item_list);
+		$('.price-select').on('change', function(){
+			$('#price-form').submit();
 		});
 	}
   

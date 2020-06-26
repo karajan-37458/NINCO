@@ -17,9 +17,9 @@
 			</h1>
 			<div class="header-links">
 				<nav class="menu">
-					<a href="">MEN</a>
-					<a href="">WOMEN</a>
-					<a href="">KIDS</a>
+					<a href="list.html?category=men">MEN</a>
+					<a href="list.html?category=women">WOMEN</a>
+					<a href="list.html?category=kids">KIDS</a>
 				</nav>
 				<div class="controls">
 					<a href="" class="controls-cart"><img src="img/icon_cart_black.svg" alt="">
@@ -39,11 +39,11 @@
 		</div>
 	</header>
 
-	<div class="contents">
+	<div id="page-detail" class="contents">
 
 		<div class="item-detail inner">
 			<div class="item-detail-main">
-				<img src="img/item/21.png" alt="">
+				<img src="img/item/21.png" alt="" data-zoom-image="img/item/21_l.png">
 				<p class="mouse-note">画像にマウスを合わせると拡大します</p>
 			</div>
 			<div class="item-detail-info">
@@ -274,8 +274,10 @@
 		</ul>
 	</footer>
 
+	<script src="js/item_data.js"></script>
 	<script src="js/jquery-3.4.1.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="js/jquery.elevatezoom.js"></script>
 	<script src="js/main.js"></script>
 
 
