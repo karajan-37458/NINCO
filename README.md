@@ -34,6 +34,7 @@
 ## :computer: インストール方法
 1.このリポジトリを複製
 $ git clone https://github.com/karajan-37458/NINCO.git
+
 2.インストールしたリポジトリに移動
 $ cd NINCO
 
