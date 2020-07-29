@@ -8,6 +8,8 @@
 </ul>
 
 ## :video_camera: DEMO
+Gyazo GIF URL :point_right: https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a
+
 [![Image from Gyazo](https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a.gif)](https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a)
 
 ## :link: NINCO(本サイト)をローカル環境から閲覧する方法
