@@ -348,7 +348,7 @@ const item_data = [
 		'price':7600,
 		'text':'清楚なタイトスカート。カラーは赤、青、白、黒の4種類あります',
 		'brand':'CCC',
-		'new':true,
+		'new':false,
 	},
 	{
 		'id':40,
@@ -385,7 +385,7 @@ const item_data = [
 		'price':800,
 		'text':'ドット柄のお洒落なベストです。清楚に合わせやすいアイテムです。',
 		'brand':'GGG',
-		'new':false,
+		'new':true,
 	},
 	{
 		'id':44,

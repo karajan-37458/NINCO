@@ -58,17 +58,24 @@ $(function(){
 
   function getItemList(key, value = null){
 		const search_value = value ? value : param_value;
+		const freewords = ['name', 'text'];
 		const items = item_data.filter(function(item, index) {
 			switch(key){
 				case 'brand':
 				case 'category':
 					return item[key] == search_value
 					break;
+				case 'freeword':
+					return freewords.find(function(freeword){
+						return item[freeword].indexOf(decodeURI(param_value)) !== -1
+					});
+					break;
 				case 'new':
 					return item['new']
 					break;
 			}
-    });
+		});
+		searchWordShow()
     return items;
 	}
 
