@@ -1,11 +1,16 @@
 <h1 align="center">NINCO（ニンコ）</h1>
 
+[![Image from Gyazo](https://gyazo.com/5bd108bd1cf861f40e0b22bd0a60ed91.jpg)](https://gyazo.com/5bd108bd1cf861f40e0b22bd0a60ed91)
+
 ## :link: アプリケーションの概要
 <ul>
   <li>ファッション系のECサイトです。</li>
   <li>HTML,CSS,JavaScript,jQueryを用いたフロントのみの実装です。</li>
   <li>JSファイルにアイテム情報を記述して、情報のカテゴリー別にアイテムを一覧表示できる様にしています。</li>
 </ul>
+
+## :link: 本番環境
+:point_right: https://karajan-37458.github.io/NINCO/
 
 ## :video_camera: DEMO
 Gyazo GIF URL :point_right: https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a
