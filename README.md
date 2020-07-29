@@ -35,8 +35,8 @@ Gyazo GIF URL :point_right: https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a
 ## :link: 開発環境
 
 <p align="center">
-  <a href="http://haml.info/"><img src="https://user-images.githubusercontent.com/66232530/88711698-87429580-d153-11ea-9ae5-452b13d15a70.png" height="45px;" /></a>
-  <a href="https://sass-lang.com/"><img src="https://user-images.githubusercontent.com/66232530/88711881-ccff5e00-d153-11ea-998e-f22d427ffa70.jpg" height="45px;" /></a>
+  <a href="https://devdocs.io/html/"><img src="https://user-images.githubusercontent.com/66232530/88711698-87429580-d153-11ea-9ae5-452b13d15a70.png" height="45px;" /></a>
+  <a href="https://devdocs.io/css/"><img src="https://user-images.githubusercontent.com/66232530/88711881-ccff5e00-d153-11ea-998e-f22d427ffa70.jpg" height="45px;" /></a>
   <a href="https://www.javascript.com/"><img src="https://user-images.githubusercontent.com/66232530/88712057-1780da80-d154-11ea-9129-11a9ff70322e.png" height="45px;" /></a>
   <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/66232530/88712858-58c5ba00-d155-11ea-9314-fa1a6d3442fc.png" height="50px;" /></a>
   <a href="https://github.co.jp/"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="45px;" /></a>
