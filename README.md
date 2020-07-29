@@ -10,7 +10,7 @@
 ## :link: 本番環境
 https://karajan-37458.github.io/NINCO/
 
-## :link: NINCO(本サイト)を閲覧する方法
+## :link: NINCO(本サイト)をローカル環境から閲覧する方法
 1.このページの右上のCodeと書かれている緑色のボタンから、ZIPファイルをダウンロードする。
 
 2.NINCO-master.zipという名前のZIPファイルを解凍し、フォルダを開いて中に入っている”index.html”というファイルを、ブラウザにドラッグ＆ドロップして開く。
