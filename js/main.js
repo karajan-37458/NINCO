@@ -25,8 +25,8 @@ $(function(){
   function createDom(items) {
     let html_template = '';
     items.forEach(function(item, index){
-      html_template += `<li class="item">
-            <a href="#">
+      html_template += `<li class="item" data-item-id="${item['id']}">
+            <a href="detail.html?id=${item['id']}">
               <div class="item-cap"><img src="./img/item/${item['id']}.png"></div>
               <div class="item-info">
                 <h3 class="item-name">${item['name']}</h3>
@@ -38,7 +38,7 @@ $(function(){
     });
     return html_template;
 	}
-	
+
 	function searchWordShow() {
 		let result_text;
 		if( param_key == 'price' ){
@@ -48,6 +48,12 @@ $(function(){
 			result_text = param_value;
 		}
 		$('.result-text').text(decodeURI(result_text));
+	}
+
+	function getItemSingle() {
+    return item_data.find(function(item){
+      return item['id'] == param_value;
+    });
 	}
 
   function getItemList(key, value = null){
@@ -136,7 +142,7 @@ $(function(){
 		$(this).toggleClass('is-active');
 		$(this).next().slideToggle();
 	});
-  
+
   if( page_type == 'page-index' ){
 		let item_list_new = getItemList('new');
 		$('[data-item-list="new"]').append(createDom(item_list_new));
@@ -158,9 +164,18 @@ $(function(){
 	});
 
 	if( page_type == 'page-detail' ){
+		const item_detail = getItemSingle();
+    Object.keys(item_detail).forEach(function(key){
+      $(`[data-item-parts="${key}"]`).text(item_detail[key]);
+    });
+    $('#zoom-img').attr('src', `./img/item/${item_detail['id']}.png`);
+    $('#zoom-img').attr('data-zoom-image', `./img/item/${item_detail['id']}_l.png`);
+    if( !item_detail['new'] ){
+      $('.new-label').remove();
+    }
 		$('[data-zoom-image]').elevateZoom();
 	}
-	
+
 	if( page_type == 'page-list' ){
 		const item_list = createDom(getItemList(param_key));
 		$('.sort-list').append(item_list);
@@ -168,7 +183,7 @@ $(function(){
 			$('#price-form').submit();
 		});
 	}
-  
+
 });
 
 $(window).on("scroll", function() {

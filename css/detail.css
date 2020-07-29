@@ -26,6 +26,16 @@
 .item-detail-info{
 	width: 47%;
 }
+.new-label{
+	display: inline-block;
+	padding: 5px 10px;
+	line-height: 1;
+	margin-bottom: 10px;
+	background: #f03a47;
+	color: #fff;
+	border-radius: 3px;
+	font-weight: bold;
+}
 .item-detail-name{
 	font-size: 20px;
 	font-weight: bold;
