@@ -1,4 +1,4 @@
-<h1 align="center">NINCO</h1>
+<h1 align="center">NINCO（ニンコ）</h1>
 
 ## :link: アプリケーションの概要
 <ul>
