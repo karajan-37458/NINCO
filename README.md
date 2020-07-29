@@ -7,6 +7,11 @@
   <li>JSファイルにアイテム情報を記述して、情報のカテゴリー別にアイテムを一覧表示できる様にしています。</li>
 </ul>
 
+## :video_camera: DEMO
+Gyazo GIF URL :point_right: https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a
+
+[![Image from Gyazo](https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a.gif)](https://gyazo.com/b3fbebbefd9be61436c4b316051bab6a)
+
 ## :link: NINCO(本サイト)をローカル環境から閲覧する方法
 1.このページの右上のCodeと書かれている緑色のボタンから、ZIPファイルをダウンロードする。
 
