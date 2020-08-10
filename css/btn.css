@@ -34,6 +34,10 @@
 	background: #fff;
 	color: #333;
 }
+.btn--buy{
+	background: #e73656;
+	color: #fff;
+}
 .btn--cart span:before{
 	background: url(../img/icon_cart_white.svg) center/cover no-repeat;
 }
