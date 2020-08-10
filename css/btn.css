@@ -30,6 +30,9 @@
 .btn--cart{
 	background: #2996cc;
 }
+.btn--cart.is-storage{
+	background: #ccc;
+}
 .btn--fav{
 	background: #fff;
 	color: #333;

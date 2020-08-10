@@ -98,6 +98,36 @@ $(function(){
 		return items;
 	}
 
+	function doneFlash(text) {
+    $('body').append(`<div class="flash">${text}</div>`);
+    setTimeout(function(){
+      location.reload();
+    }, 1000);
+  }
+
+	function storageControl(id) {
+		let storage_data = JSON.parse(localStorage.getItem('ninco_cart'));
+		id = Number(id);
+    if( storage_data == null ){
+      storage_data = [id];
+    }else{
+      if( storage_data.indexOf(id) !== -1 ){
+        storage_data.splice(storage_data.indexOf(id), 1);
+      }else{
+        storage_data.push(id);
+      }
+    }
+    localStorage.setItem('ninco_cart', JSON.stringify(storage_data));
+	}
+
+	function storageSaveJudge(id) {
+    let storage_data = JSON.parse(localStorage.getItem('ninco_cart'));
+    id = Number(id);
+    if( storage_data !== null ){
+      return storage_data.indexOf(id) !== -1;
+    }
+  }
+
   //TOPのスライダー
   $('.top-slider').slick({
     autoplay:true,
@@ -188,16 +218,31 @@ $(function(){
 		});
 	}
 
+	//カートに追加
+  $('.btn--cart').on('click', function(){
+  	const item_id = $(this).parents('.item-detail').attr('data-item-id');
+  	storageControl(item_id, 'cart');
+  	if( storageSaveJudge(item_id, 'cart') ){
+  		doneFlash('カートに追加しました。');
+  	}else{
+  		doneFlash('カートから外しました。');
+  	}
+  });
+
 	if( page_type == 'page-detail' ){
 		const item_detail = getItemSingle();
     Object.keys(item_detail).forEach(function(key){
       $(`[data-item-parts="${key}"]`).text(item_detail[key]);
     });
     $('#zoom-img').attr('src', `./img/item/${item_detail['id']}.png`);
-    $('#zoom-img').attr('data-zoom-image', `./img/item/${item_detail['id']}_l.png`);
+		$('#zoom-img').attr('data-zoom-image', `./img/item/${item_detail['id']}_l.png`);
+		$('.item-detail').attr('data-item-id', item_detail['id']);
     if( !item_detail['new'] ){
       $('.new-label').remove();
-    }
+		}
+		if( storageSaveJudge(item_detail['id']) ){
+			$('.btn--cart').addClass('is-storage');
+		}
 		$('[data-zoom-image]').elevateZoom();
 	}
 
