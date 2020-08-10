@@ -70,6 +70,9 @@ $(function(){
 						return item[freeword].indexOf(decodeURI(param_value)) !== -1
 					});
 					break;
+				case 'price':
+					return item['price'] <= search_value
+					break;
 				case 'new':
 					return item['new']
 					break;
@@ -150,16 +153,6 @@ $(function(){
 		$(this).next().slideToggle();
 	});
 
-  if( page_type == 'page-index' ){
-		let item_list_new = getItemList('new');
-		$('[data-item-list="new"]').append(createDom(item_list_new));
-		categorys.forEach(function(category){
-			let item_list_category = getItemList('category', category);
-			item_list_category = createDom(item_list_category);
-			$(`[data-item-list="${category}"]`).append(item_list_category);
-		});
-	}
-
 	let item_list_pickup = createDom(pickUpShuffle(item_data));
 	$('[data-item-list="pickup"]').append(item_list_pickup);
 
@@ -169,6 +162,22 @@ $(function(){
   $('[data-more-btn="items"]').on('click',function(){
     moreControl($(this), 10);
 	});
+
+	$('.word-search').focus(function(){
+		$(this).addClass('is-cursor');
+	}).blur(function(){
+		$(this).removeClass('is-cursor');
+	});
+
+	if( page_type == 'page-index' ){
+		let item_list_new = getItemList('new');
+		$('[data-item-list="new"]').append(createDom(item_list_new));
+		categorys.forEach(function(category){
+			let item_list_category = getItemList('category', category);
+			item_list_category = createDom(item_list_category);
+			$(`[data-item-list="${category}"]`).append(item_list_category);
+		});
+	}
 
 	if( page_type == 'page-detail' ){
 		const item_detail = getItemSingle();
