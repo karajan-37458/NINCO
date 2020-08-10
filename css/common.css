@@ -163,6 +163,11 @@ a img:hover{
   background: url(../img/icon_search.svg) 10px center no-repeat;
   background-size: 18px;
   outline: none;
+  transition: all 0.3s;
+}
+.word-search.is-cursor{
+  width: 250px;
+  border: 1px solid #333;
 }
 .word-submit{
   position: absolute;
@@ -384,7 +389,7 @@ a img:hover{
 }
 
 @media screen and (max-width: 768px){
-  
+
   /*スマホ共通ここから*/
   .contents{
     padding-top: 45px;
@@ -424,6 +429,9 @@ a img:hover{
     width: 160px;
     left: 100px;
     font-size: 11px;
+  }
+  .word-search.is-cursor{
+    width: 180px;
   }
   .word-submit{
     left: 100px;

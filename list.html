@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/list.css">
 </head>
 <body>
-	
+
 	<header class="header">
 		<div class="header-inner inner">
 			<h1 class="logo">
@@ -26,7 +26,7 @@
 					</a>
 				</div>
 			</div>
-			<form action="list.html">
+			<form action="list.html" autocomplete="off" method="GET">
 				<button type="submit" class="word-submit"></button>
 				<input type="text" class="word-search" placeholder="何かお探しですか？" name="freeword">
 			</form>
@@ -41,7 +41,7 @@
 	<div id="page-list" class="contents">
 
 		<div class="inner list-area">
-			
+
 			<aside class="sidebar">
 				<section class="sidebar-inner">
 					<h3 class="sidebar-title">カテゴリー</h3>
@@ -56,7 +56,7 @@
 				<section class="sidebar-inner">
 					<h3 class="sidebar-title">価格</h3>
 					<div class="sidebar-body">
-						<form action="" method="GET">
+						<form action="" method="GET" id="price-form">
 							<div class="price-select-wrap">
 								<select name="price" class="price-select">
 									<option hidden="">価格を選択する</option>
