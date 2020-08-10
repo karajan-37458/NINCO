@@ -169,6 +169,15 @@ $(function(){
 		$(this).removeClass('is-cursor');
 	});
 
+	$('.controls-cart').on('click', function(e){
+    e.preventDefault();
+    $('.modal-wrap').fadeToggle();
+    $('.menu-trigger, .header-links').removeClass('is-active');
+  });
+  $('.modal-close, .modal-wrap').on('click', function(e){
+    $('.modal-wrap').fadeOut();
+  });
+
 	if( page_type == 'page-index' ){
 		let item_list_new = getItemList('new');
 		$('[data-item-list="new"]').append(createDom(item_list_new));
