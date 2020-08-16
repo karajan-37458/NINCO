@@ -264,6 +264,54 @@ $(function(){
 		$('.cart-batch').hide();
 	}
 
+	//お気に入りに追加
+	$('.btn--fav').on('click', function(){
+		const item_id = $(this).parents('.item-detail').attr('data-item-id');
+		storageControl(item_id, 'fav');
+
+		if( storageSaveJudge(item_id, 'fav') ){
+			doneFlash('お気に入りに追加しました。');
+		}else{
+			doneFlash('お気に入りから外しました。');
+		}
+
+	});
+
+
+	const fav_storage = JSON.parse(localStorage.getItem('ninco_fav'));
+	if( fav_storage !== null ){
+		const fav_items = item_data.filter(function(item) {
+			if( fav_storage.indexOf(item['id']) !== -1 ){
+				return item;
+			}
+		});
+		$('[data-item-list="fav"]').append(createDom(fav_items));
+
+		//お気に入りのスライダー
+		$('[data-item-list="fav"]').slick({
+			arrows:true,
+			autoplay:true,
+			dots:false,
+			speed:1500,
+			easing:'swing',
+			slidesToShow:5,
+			slidesToScroll:1,
+			prevArrow:'<div class="slide-btn prev-btn"></div>',
+			nextArrow:'<div class="slide-btn next-btn"></div>',
+			responsive:[
+				{
+					breakpoint:768,
+					settings:{
+						centerPadding:'0%',
+						slidesToShow:3,
+						slidesToScroll:1,
+					}
+				}
+			]
+		});
+
+	}
+
 	if( page_type == 'page-detail' ){
 		const item_detail = getItemSingle();
     Object.keys(item_detail).forEach(function(key){
