@@ -206,7 +206,16 @@ $(function(){
   });
   $('.modal-close, .modal-wrap').on('click', function(e){
     $('.modal-wrap').fadeOut();
-  });
+	});
+
+	//購入ボタンを押したときの処理
+	$('.btn--buy').on('click', function(){
+		if( confirm('購入して良いですか?') ){
+			localStorage.removeItem('ninco_cart');
+			alert('購入しました！');
+		}
+	});
+
 
 	if( page_type == 'page-index' ){
 		let item_list_new = getItemList('new');
