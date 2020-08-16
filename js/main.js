@@ -227,7 +227,33 @@ $(function(){
   	}else{
   		doneFlash('カートから外しました。');
   	}
-  });
+	});
+
+	//カートに入れたアイテムを生成
+	const cart_storage = JSON.parse(localStorage.getItem('ninco_cart'));
+	if( cart_storage !== null ){
+		let cart_price = 0;
+		const cart_items = item_data.filter(function(item) {
+			if( cart_storage.indexOf(item['id']) !== -1 ){
+				cart_price += item['price'];
+				return item;
+			}
+		});
+
+		//カートの合計金額を出力
+		$('.cart-total-price').text(cart_price + '円');
+
+		//カートの合計点数を計算
+		$('.cart-batch, .cart-total-num').text(cart_storage.length);
+
+		if( cart_storage.length <= 0 ){
+			$('.cart-batch').hide();
+		}
+
+		$('#cart-list').append(createDom(cart_items, true));
+	}else{
+		$('.cart-batch').hide();
+	}
 
 	if( page_type == 'page-detail' ){
 		const item_detail = getItemSingle();
