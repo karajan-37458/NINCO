@@ -105,28 +105,28 @@ $(function(){
     }, 1000);
   }
 
-	function storageControl(id) {
-		let storage_data = JSON.parse(localStorage.getItem('ninco_cart'));
+  function storageControl(id, storage_type) {
+		let storage_data = JSON.parse(localStorage.getItem(`ninco_${storage_type}`));
 		id = Number(id);
-    if( storage_data == null ){
-      storage_data = [id];
-    }else{
-      if( storage_data.indexOf(id) !== -1 ){
-        storage_data.splice(storage_data.indexOf(id), 1);
-      }else{
-        storage_data.push(id);
-      }
-    }
-    localStorage.setItem('ninco_cart', JSON.stringify(storage_data));
+		if( storage_data == null ){
+			storage_data = [id];
+		}else{
+			if( storage_data.indexOf(id) !== -1 ){
+				storage_data.splice(storage_data.indexOf(id), 1);
+			}else{
+				storage_data.push(id);
+			}
+		}
+		localStorage.setItem(`ninco_${storage_type}`, JSON.stringify(storage_data));
 	}
 
-	function storageSaveJudge(id) {
-    let storage_data = JSON.parse(localStorage.getItem('ninco_cart'));
-    id = Number(id);
-    if( storage_data !== null ){
-      return storage_data.indexOf(id) !== -1;
-    }
-  }
+	function storageSaveJudge(id, storage_type) {
+		let storage_data = JSON.parse(localStorage.getItem(`ninco_${storage_type}`));
+		id = Number(id);
+		if( storage_data !== null ){
+			return storage_data.indexOf(id) !== -1;
+		}
+	}
 
   //TOPのスライダー
   $('.top-slider').slick({
@@ -314,6 +314,7 @@ $(function(){
 
 	if( page_type == 'page-detail' ){
 		const item_detail = getItemSingle();
+		const storage_types = ['cart', 'fav'];
     Object.keys(item_detail).forEach(function(key){
       $(`[data-item-parts="${key}"]`).text(item_detail[key]);
     });
@@ -323,9 +324,11 @@ $(function(){
     if( !item_detail['new'] ){
       $('.new-label').remove();
 		}
-		if( storageSaveJudge(item_detail['id']) ){
-			$('.btn--cart').addClass('is-storage');
-		}
+		storage_types.forEach(function(type){
+			if( storageSaveJudge(item_detail['id'], type) ){
+				$(`.btn--${type}`).addClass('is-storage');
+			}
+		});
 		$('[data-zoom-image]').elevateZoom();
 	}
 

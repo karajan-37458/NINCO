@@ -37,6 +37,9 @@
 	background: #fff;
 	color: #333;
 }
+.btn--fav.is-storage{
+	background: #ccc;
+}
 .btn--buy{
 	background: #e73656;
 	color: #fff;
